@@ -8,7 +8,7 @@
  * sowie den Zeilen 8 bis 15 über den Port RGB1 mit R1, G1, B1 erreichbar.
  *
  * Getestet mit:         Arduino Uno
- *                       Arduino IDE 1.63 / 1.64
+ *                       Arduino IDE 1.6.3 / 1.6.4 / 1.6.6
  *
  * Referenz:             https://learn.adafruit.com/32x16-32x32-rgb-led-matrix/
  *
@@ -52,7 +52,7 @@ const byte CLK                    =  8;            // Clock, pos. Flanke
 const byte OE                     =  9;            // Output Enable, neg. Flanke
 const byte STB                    =  10;           // LAT Latch (Strobe), neg. Flanke
 /***  Deklariere Konstanten für die Adressspins  ***/
-/*  MSB   LSB
+/*  msb   lsb
     C  B  A  Zeile von oben
     0  0  0    0
     0  0  1    1
@@ -124,7 +124,7 @@ void setup() {
     /***  Strobe-Pulse RGB Port0/1 Schieberegister fix ins Latch speichern  ***/
     digitalWrite(STB, HIGH);                       // Datendurchgang HIGH
     digitalWrite(STB, LOW);                        // Daten ins Latch gespeichert LOW
-    delay(100);                                    // Optional Delay for debugging!
+ //   delay(100);                                    // Optional Delay for debugging!
   }
   digitalWrite(CLK, LOW);                          // Taktleitung zurücksetzen
 
@@ -137,7 +137,7 @@ void loop() {
   /***  Adressiere alle Zeilen mit den im Latch gespeicherten Daten  ***/
   for (int i = 0; i <= 7; i++)  {                  // Zeile 1 bis 8, 9 bis 16
     addressRow(i);                                 // Zeile, Verzögerung
-    delay(100);                                    // Optional Delay for debugging!
+//    delay(100);                                    // Optional Delay for debugging!
   }
 }                                                  // Ende Loop (Endlos)
 /*******************************************************************************/
