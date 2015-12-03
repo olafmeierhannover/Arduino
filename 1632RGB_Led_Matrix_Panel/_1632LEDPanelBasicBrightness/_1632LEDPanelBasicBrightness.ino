@@ -1,7 +1,7 @@
 /*******************************************************************************/
 /* _1632LEDPanelBasicBrightness - Simpler Sketch zum Debuggen der
    Funktionsweise des 16*32 Adafruit RGB LED Panels auch ohne Library.
-   Der Sketch ist um eine Steuerung der Displayhelligkeit erweitert.
+   Der Sketch ist um eine Helligkeitssteuerung des Panels erweitert.
 
    Die Verkabelung erfolgt allerdings entsprechend der Adafruit Library.
    Der Dateneingang mit Blick auf die LEDs befindet sich rechts.
